@@ -58,7 +58,7 @@ long rgbToLong(int r, int g, int b) {
  * @param  l The desired luminance from 0 - 255.
  * @return   A long int color value.
  */
-long rgbl(byte r, byte g, byte b, byte l) {
+long rgbl(uint8_t r, uint8_t g, uint8_t b, uint8_t l) {
   r = intensity(r,l);
   g = intensity(g,l);
   b = intensity(b,l);
@@ -83,10 +83,10 @@ long rgbl(byte r, byte g, byte b, byte l) {
   }
 
   // @todo test this
-  //byte minusLum = (int) ( (int) (totalLum / litLeds) / 3);
+  //uint8_t minusLum = (int) ( (int) (totalLum / litLeds) / 3);
 
   // Adjust the total intensity
-  byte minusLum = (totalLum / litLeds) / 3;
+  uint8_t minusLum = (totalLum / litLeds) / 3;
   r = valueConfine(r - minusLum);
   g = valueConfine(g - minusLum);
   b = valueConfine(b - minusLum);
